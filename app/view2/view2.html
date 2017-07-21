@@ -1,0 +1,26 @@
+<p>This is the partial for view 2.</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+
+  <div ng-repeat="condition in conditions">
+    <span ng-bind="condition.name"></span>
+      <select ng-model="condition.value" ng-options="c.key as c.label for c in cards">
+        <option value="">בחר מספר</option>
+      </select>
+
+  </div>
+
+  <button ng-click="submit();">שלח</button>
+<br/>
+<label>קלפים</label><br/>
+{{
+  cards | json
+}}
+
+<br/><br/>
+
+<label>נשלח לשרת:</label><br/>
+{{ conditions  | json}}
+
+</p>
